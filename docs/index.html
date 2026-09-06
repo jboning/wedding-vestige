@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+<head>
+	<meta name="generator" content="Hugo 0.145.0">
+  <meta charset="utf-8" />
+  <meta name="robots" content="noindex" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://necolas.github.io/normalize.css/latest/normalize.css" />
+  
+  <link rel="stylesheet" href="/style.min.4a34eb7764d38d1b8ef77d26d64fecbc639be47d2f9598695a119d4fd7104298.css">
+  <title class="us" data-us-format="Home - %">
+    Home - Emily &amp; Josiah
+  </title>
+</head>
+<body>
+  <div id="page">
+    <div id="header">
+      <h1 class="us">Emily &amp; Josiah</h1>
+<nav>
+  <input type="checkbox" id="nav-check" />
+  <label for="nav-check" class="check-btn-closed">[Menu]</label>
+  <label for="nav-check" class="check-btn-opened">[Menu]</label>
+  <ul>
+    
+  </ul>
+</nav>
+
+    </div>
+    <div id="main">
+      
+  <img class="splash" src="/y.jpg" alt="" />
+  <div class="home content">
+  <p>The wedding of</p>
+<div class="us-full">Emily Kemp & Josiah Boning</div>
+<p>was October 12, 2025.</p>
+<p>Thanks for celebrating with us!</p>
+
+  </div>
+
+    </div>
+    <div id="footer">
+      
+    </div>
+  </div>
+<script>
+for (const elem of document.getElementsByClassName("us")) {
+  const us = Math.random() < 0.5 ? "Josiah + Emily" : "Emily + Josiah";
+  if (elem.dataset.usFormat) {
+    elem.textContent = elem.dataset.usFormat.replace("%", us);
+  } else {
+    elem.textContent = us;
+  }
+}
+for (const elem of document.getElementsByClassName("us-full")) {
+  const us = Math.random() < 0.5 ? "Josiah Boning + Emily Kemp" : "Emily Kemp + Josiah Boning";
+  if (elem.dataset.usFormat) {
+    elem.textContent = elem.dataset.usFormat.replace("%", us);
+  } else {
+    elem.textContent = us;
+  }
+}
+for (const elem of document.querySelectorAll('a')) {
+  const u = URL.parse(elem.href);
+  if (u.host == "josiahandemily.com" || u.host == "emilyandjosiah.com") {
+    u.host = Math.random() < 0.5 ? "josiahandemily.com" : "emilyandjosiah.com";
+    elem.href = u.toString();
+  }
+}
+</script>
+</body>
+</html>
