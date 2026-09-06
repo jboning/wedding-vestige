@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" class="{{ block "pageclass" . }}{{ end }}">
+<head>
+  <meta charset="utf-8" />
+  <meta name="robots" content="noindex" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://necolas.github.io/normalize.css/latest/normalize.css" />
+  {{ $style := resources.Get "style.css" | resources.Minify | resources.Fingerprint }}
+  <link rel="stylesheet" href="{{ $style.RelPermalink }}">
+  <title class="us" data-us-format="{{ .Title }} - %">{{ block "title" . }}
+    {{ .Title }} - {{ .Site.Title }}
+  {{ end }}</title>
+</head>
+<body>
+  <div id="page">
+    <div id="header">
+      {{ block "header" . }}{{ partial "header.html" . }}{{ end }}
+    </div>
+    <div id="main">
+      {{ block "main" . }}{{ end }}
+    </div>
+    <div id="footer">
+      {{ block "footer" . }}{{ end }}
+    </div>
+  </div>
+<script>
+for (const elem of document.getElementsByClassName("us")) {
+  const us = Math.random() < 0.5 ? "Josiah + Emily" : "Emily + Josiah";
+  if (elem.dataset.usFormat) {
+    elem.textContent = elem.dataset.usFormat.replace("%", us);
+  } else {
+    elem.textContent = us;
+  }
+}
+for (const elem of document.getElementsByClassName("us-full")) {
+  const us = Math.random() < 0.5 ? "Josiah Boning + Emily Kemp" : "Emily Kemp + Josiah Boning";
+  if (elem.dataset.usFormat) {
+    elem.textContent = elem.dataset.usFormat.replace("%", us);
+  } else {
+    elem.textContent = us;
+  }
+}
+for (const elem of document.querySelectorAll('a')) {
+  const u = URL.parse(elem.href);
+  if (u.host == "josiahandemily.com" || u.host == "emilyandjosiah.com") {
+    u.host = Math.random() < 0.5 ? "josiahandemily.com" : "emilyandjosiah.com";
+    elem.href = u.toString();
+  }
+}
+</script>
+</body>
+</html>

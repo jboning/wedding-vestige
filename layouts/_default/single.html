@@ -1,0 +1,6 @@
+{{ define "main" }}
+  {{ if .Param "splash" }}<img class="splash" src="{{ .Param "splash" }}" alt="" />{{ end }}
+  <div class="content">
+  {{ .Content }}
+  </div>
+{{ end }}

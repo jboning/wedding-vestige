@@ -1,0 +1,6 @@
+baseURL = 'https://emilyandjosiah.com/'
+languageCode = 'en-us'
+title = 'Emily & Josiah'
+
+[markup.goldmark.renderer]
+unsafe = true 
